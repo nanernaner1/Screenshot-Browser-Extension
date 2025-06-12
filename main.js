@@ -81,9 +81,10 @@ const element = event.target; // The clicked element
     var target = path;
     
     let bgColor = findColorStyle(element);
+	element.style.color = "white";
+	element.style.backgroundColor = "black";
 
-      //html2canvas(element, {scale: '2', backgroundColor: null}).then(canvas => {
-      html2canvas(element, {scale: '2', backgroundColor: bgColor}).then(canvas => {
+      html2canvas(element, {scale: '2', backgroundColor: null}).then(canvas => {
           modal_preview.appendChild(canvas);
           modal.style.display = 'block';
           modal_overlay.style.display = 'block';
@@ -95,6 +96,7 @@ const element = event.target; // The clicked element
             link.href = canvas.toDataURL();
             link.click();
         });
+	  // EventListener for ''CLOSING'' Modal and removing canvas appendage
           closeModal_btn.addEventListener('click', function() {
               modal.style.display = 'none';
               modal_overlay.style.display = 'none';
