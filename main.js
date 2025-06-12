@@ -26,7 +26,9 @@ modal_preview.id = 'modal-preview';
 
 // Create Modal buttons
 let screenCap_btn = document.createElement('button');
+screenCap_btn.innerText = "Save";
 let closeModal_btn = document.createElement('button');
+closeModal_btn.innerText = "Close";
 
 // Append Modal UI to base modal (modal_preview and buttons)
 modal.appendChild(modal_preview);
@@ -36,7 +38,9 @@ modal.appendChild(closeModal_btn);
 // Assign margin styles to both buttons
 modal.querySelectorAll('button').forEach((el) => {
     Object.assign(el.style, {
-        marginTop: '10px'
+        marginTop: '10px',
+	width: "100px",
+	height: "40px",
     });
 });
 
